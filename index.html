@@ -3,43 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanda Viana Anchieta - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Amanda Viana - Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Amanda Viana Anchieta</h1>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#projetos">Projetos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>Formada em Ciência da Computação, apaixonada por desenvolvimento de jogos e front-end para sites e apps.</p>
-    </section>
-    
-    <section id="projetos">
-        <h2>Projetos</h2>
-        <div class="projeto">
-            <h3>Power Connect</h3>
-            <p>Jogo 3D educativo desenvolvido em Unity.</p>
-        </div>
-        <div class="projeto">
-            <h3>Dashboard Interativo</h3>
-            <p>Dashboard com gráficos dinâmicos usando React.</p>
-        </div>
-    </section>
-    
-    <section id="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato comigo pelo <a href="mailto:seuemail@email.com">e-mail</a> ou pelas redes sociais.</p>
-    </section>
-    
-    <script src="script.js"></script>
+    <!-- Barra estilo janela -->
+    <nav class="window-bar">
+        <span class="window-controls">✖ ⬜ ➖</span>
+        <ul>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- Barra de navegação horizontal estilo Foto 5 -->
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#sobre">Sobre Mim</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="#game">Game</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Oi!</h1>
+            <p>Eu sou a Amanda Viana Anchieta</p>
+            <p>Formada em Ciência da Computação, apaixonada por design e desenvolvimento de jogos.</p>
+        </header>
+
+        <section id="game">
+            <h2>Nome do Joguinho Offline</h2>
+            <p>Aqui vai ter que rodar um jogo depois!</p>
+        </section>
+    </div>
 </body>
 </html>

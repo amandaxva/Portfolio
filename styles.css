@@ -1,0 +1,95 @@
+/* Importando a fonte */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: "Press Start 2P", system-ui;
+    background-color: #dbdbdb;
+    color: #02030e;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra superior estilo janela */
+.window-bar {
+    background-color: #7f7f81;
+    color: #02030e;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #02030e;
+}
+
+.window-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.window-bar li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.window-controls {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Barra horizontal de navegação (estilo Foto 5) */
+.nav-bar {
+    background-color: #151c9f;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 4px solid #02030e;
+}
+
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-bar ul li {
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    color: #adadaf;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px;
+    transition: 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    background-color: #02030e;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+/* Conteúdo principal */
+.container {
+    padding: 20px;
+    text-align: left;
+}
+
+header {
+    background-color: #adadaf;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+section {
+    background-color: #adadaf;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
