@@ -1,95 +1,124 @@
-/* Importando a fonte */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+/* Estilo geral */
 body {
-    font-family: "Press Start 2P", system-ui;
-    background-color: #dbdbdb;
-    color: #02030e;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #e0e0e0;
+    color: #000;
     margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
-/* Barra superior estilo janela */
+/* Barra de navegação superior */
 .window-bar {
-    background-color: #7f7f81;
-    color: #02030e;
-    padding: 10px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid #02030e;
-}
-
-.window-bar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-}
-
-.window-bar li {
-    display: inline-block;
-    margin-right: 15px;
-}
-
-.window-controls {
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-/* Barra horizontal de navegação (estilo Foto 5) */
-.nav-bar {
-    background-color: #151c9f;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 4px solid #02030e;
-}
-
-.nav-bar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.nav-bar ul li {
-    margin: 0 15px;
-}
-
-.nav-bar ul li a {
-    color: #adadaf;
-    text-decoration: none;
-    font-size: 14px;
+    background-color: #0b0e59;
+    color: #adadb1;
+    font-size: 0.7rem;
+    line-height: 1.8;
     padding: 8px;
-    transition: 0.3s;
+    padding-left: 30px;
+    padding-top: 10px;
+    border-bottom: 3px solid #adadb1;
 }
 
-.nav-bar ul li a:hover {
-    background-color: #02030e;
-    color: #ffffff;
-    border-radius: 5px;
+/* Seção principal */
+.main-container {
+    margin: 40px auto;
+    padding: 20px 80px;
 }
 
-/* Conteúdo principal */
-.container {
-    padding: 20px;
-    text-align: left;
+/* Títulos e texto */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    margin-left: 100px;
 }
 
-header {
-    background-color: #adadaf;
-    padding: 40px;
+.title-line {
+    font-size: 1.5rem;
+    line-height: 0.5;
+    margin-left: 100px;
+}
+
+
+.description {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    line-height: 0.8;
+    margin-left: 100px;
+}
+
+/* Divisor */
+.divider {
+    height: 4px;
+    background-color: #000;
+    margin-top: 60px;
+}
+
+/* Quick Links */
+.quick-links {
+    font-size: 0.8rem;
+    margin: -20px 0;
+    padding: 5px;
     text-align: center;
-    border-radius: 10px;
+    background-color: #0b0e59;
+    color: #adadb1;
+    width: 900px;
+    justify-self: center;
+    border-radius: 5px;
+    border: 4px solid #000;
+}
+
+.quick-links span {
+    padding: 8px;
+    margin-right: 70px;
+    justify-self: center;
+    justify-content: space-around;
+}
+
+/* jogo */
+.game-container {
+    background-color: #adadb1;
+    border: 2px dashed #0b0e59;
+    padding: 15px;
+    margin: 40px 0;
+    width: 900px;
+    justify-items: center;
+    justify-self: center;
+}
+
+/* Seção de widgets */
+.widget-section {
+    margin-top: 50px;
+}
+
+.widget-section h2 {
+    font-size: 1.8rem;
     margin-bottom: 20px;
 }
 
-section {
-    background-color: #adadaf;
+.widget {
+    background-color: #fff;
+    border: 3px solid #000;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.widget h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.widget ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.widget li {
+    padding: 5px 0;
+    font-size: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
 }
