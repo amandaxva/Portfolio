@@ -1,4 +1,4 @@
-/* Estilo geral */
+/* Estilo geral original */
 body {
     font-family: 'Press Start 2P', cursive;
     background-color: #e0e0e0;
@@ -8,25 +8,69 @@ body {
     line-height: 1.6;
 }
 
-/* Barra de navegação superior */
+/* Barra superior - estilo original com ícones melhorados */
 .window-bar {
     background-color: #0b0e59;
     color: #adadb1;
-    font-size: 0.7rem;
-    line-height: 1.8;
-    padding: 8px;
-    padding-left: 30px;
-    padding-top: 10px;
+    font-size: 0.9rem;
+    padding: 8px 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
     border-bottom: 3px solid #adadb1;
 }
 
-/* Seção principal */
+.window-icon {
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.window-icon:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.nav-divider {
+    color: #adadb1;
+    margin: 0 5px;
+    margin-top: 7px;
+}
+
+.nav-item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 8px;
+}
+
+.nav-item:hover {
+    color: #fff;
+}
+
+/* Seção principal - estilo original */
 .main-container {
     margin: 40px auto;
     padding: 20px 80px;
+    max-width: 1200px;
 }
 
-/* Títulos e texto */
+.profile-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    margin-left: 100px;
+}
+
+.profile-image img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #0b0e59;
+    box-shadow: 8px 8px 0 #000;
+}
+
 h1 {
     font-size: 2.5rem;
     margin-bottom: 30px;
@@ -35,90 +79,154 @@ h1 {
 
 .title-line {
     font-size: 1.5rem;
-    line-height: 0.5;
-    margin-left: 100px;
+    line-height: 1.5;
+    margin-bottom: 10px;
 }
-
 
 .description {
-    margin-top: 10px;
     font-size: 0.9rem;
+    line-height: 1.6;
     margin-bottom: 5px;
-    line-height: 0.8;
-    margin-left: 100px;
 }
 
-/* Divisor */
 .divider {
     height: 4px;
     background-color: #000;
-    margin-top: 60px;
+    margin: 60px 0 30px;
 }
 
-/* Quick Links */
+/* Quick Links - estilo original com ícones */
 .quick-links {
-    font-size: 0.8rem;
-    margin: -20px 0;
-    padding: 5px;
+    font-size: 0.9rem;
+    margin: 20px auto;
+    padding: 15px;
     text-align: center;
     background-color: #0b0e59;
     color: #adadb1;
-    width: 900px;
-    justify-self: center;
+    width: 100%;
+    max-width: 900px;
     border-radius: 5px;
     border: 4px solid #000;
-}
-
-.quick-links span {
-    padding: 8px;
-    margin-right: 70px;
-    justify-self: center;
+    display: flex;
     justify-content: space-around;
 }
 
-/* jogo */
+.link-item {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 45px;
+    position: relative;
+}
+
+.link-item:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -10px;
+    color: #adadb1;
+}
+
+.link-item:hover {
+    color: #fff;
+}
+
+/* Jogo - tamanho aumentado */
 .game-container {
     background-color: #adadb1;
     border: 2px dashed #0b0e59;
     padding: 15px;
-    margin: 40px 0;
+    margin: 40px auto;
     width: 900px;
-    justify-items: center;
-    justify-self: center;
 }
 
-/* Seção de widgets */
-.widget-section {
-    margin-top: 50px;
+#game {
+    width: 100%;
+    height: 300px;
+    display: block;
 }
 
-.widget-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+/* Popup - estilo original com ícones */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 30px;
+    border: 5px solid #000;
+    position: relative;
+    max-width: 700px;
+    width: 80%;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .widget {
     background-color: #fff;
     border: 3px solid #000;
     padding: 20px;
-    margin-bottom: 30px;
+    position: relative;
+}
+
+.widget::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 50px;
+    height: 15px;
+    background-color: #0b0e59;
+    border: 3px solid #000;
+    border-bottom: none;
 }
 
 .widget h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.widget p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
 }
 
 .widget ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 15px;
 }
 
 .widget li {
-    padding: 5px 0;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 0.8rem;
-    text-align: left;
     border-bottom: 1px solid #ddd;
+}
+
+.hidden {
+    display: none;
 }

@@ -5,153 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio - Amanda</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
     </style>
 </head>
 <body>
-    <!-- Barra superior -->
+    <!-- Barra superior original mas com ícones melhorados -->
     <div class="window-bar">
-        <span>🗙 🗖   Projects | Skills | Contato</span>
+        <span class="window-icon"><i class="fas fa-times"></i></span>
+        <span class="window-icon"><i class="fas fa-square"></i></span>
+        <span class="nav-divider">|</span>
+        <span class="nav-item"><i class="fas fa-folder-open"></i> Projects</span>
+        <span class="nav-item"><i class="fas fa-code"></i> Skills</span>
+        <span class="nav-item"><i class="fas fa-envelope"></i> Contact</span>
     </div>
 
-    <!-- Seção principal -->
+    <!-- Seção principal (estilo original) -->
     <div class="main-container">
         <h1>Oi!</h1>
-        <div class="intro">
-            <p class="title-line">Me chamo</p>
-            <p class="title-line">Amanda Anchieta</p>
-            <p class="description">Formada em Ciência da Computação. </p> 
-            <p class="description"> Apaixonada por arte, design, e desenvolvimneto de jogos</p>
+        
+        <div class="profile-section">
+            <div class="intro">
+                <p class="title-line">Me chamo</p>
+                <p class="title-line">Amanda Anchieta</p>
+                <p class="description">Formada em Ciência da Computação.</p> 
+                <p class="description">Apaixonada por arte, design e desenvolvimento de jogos</p>
+            </div>
+            <div class="profile-image">
+                <img src="https://via.placeholder.com/300x400" alt="Amanda Anchieta">
+            </div>
         </div>
 
         <!-- Divisor -->
         <div class="divider"></div>
 
-        <!-- Quick Links -->
+        <!-- Quick Links com ícones -->
         <div class="quick-links">
-            <span><strong>PROJETOS</strong></span> ↗| 
-            <span><strong>SKILLS</strong></span> ↗| 
-            <span><strong>SOBRE MIM</strong></span> ↗| 
-            <span><strong>CONTATO</strong></span> ↗
+            <span class="link-item" data-target="projects"><i class="fas fa-folder"></i> <strong>PROJETOS</strong></span>
+            <span class="link-item" data-target="skills"><i class="fas fa-code"></i> <strong>SKILLS</strong></span>
+            <span class="link-item" data-target="about"><i class="fas fa-user"></i> <strong>SOBRE MIM</strong></span>
+            <span class="link-item" data-target="contact"><i class="fas fa-envelope"></i> <strong>CONTATO</strong></span>
         </div>
 
-        <!-- Jogo do Dinossauro -->
+        <!-- Jogo do Dinossauro (300px height) -->
         <div class="game-container">
-            <canvas id="game" width="900" height="150"></canvas>
+            <canvas id="game" width="900" height="300"></canvas>
         </div>
+    </div>
 
-        <script>
-            const canvas = document.getElementById('game');
-            const ctx = canvas.getContext('2d');
-            
-            // Variáveis do jogo
-            let dino = {
-                x: 50,
-                y: 100,
-                width: 30,
-                height: 50,
-                jumping: false,
-                velocityY: 0
-            };
-            
-            let obstacles = [];
-            let score = 0;
-            let gameSpeed = 5;
-            let gameOver = false;
-            
-            // Controles
-            document.addEventListener('keydown', (e) => {
-                if (e.code === 'Enter' && !dino.jumping) {
-                    dino.jumping = true;
-                    dino.velocityY = -12;
-                }
-            });
-            
-            // Loop do jogo
-            function gameLoop() {
-                if (gameOver) return;
-                
-                // Limpar canvas
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Desenhar dinossauro
-                ctx.fillStyle = '#0b0e59'
-                ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
-                
-                // Física do pulo
-                dino.y += dino.velocityY;
-                dino.velocityY += 0.8;
-                
-                if (dino.y > 100) {
-                    dino.y = 100;
-                    dino.jumping = false;
-                    dino.velocityY = 0;
-                }
-                
-                // Gerar obstáculos
-                if (Math.random() < 0.02) {
-                    obstacles.push({
-                        x: canvas.width,
-                        width: 20,
-                        height: 30
-                    });
-                }
-                
-                // Mover e desenhar obstáculos
-                for (let i = 0; i < obstacles.length; i++) {
-                    obstacles[i].x -= gameSpeed;
-                    ctx.fillRect(obstacles[i].x, canvas.height - obstacles[i].height, 
-                                obstacles[i].width, obstacles[i].height);
-                    
-                    // Detecção de colisão
-                    if (dino.x + dino.width > obstacles[i].x && 
-                        dino.x < obstacles[i].x + obstacles[i].width && 
-                        dino.y + dino.height > canvas.height - obstacles[i].height) {
-                        gameOver = true;
-                        alert(`Game Over! Score: ${score}`);
-                    }
-                    
-                    // Remover obstáculos que saíram da tela
-                    if (obstacles[i].x + obstacles[i].width < 0) {
-                        obstacles.splice(i, 1);
-                        score++;
-                        if (score % 5 === 0) gameSpeed += 0.5;
-                    }
-                }
-                
-                // Desenhar chão
-                ctx.fillRect(0, canvas.height - 10, canvas.width, 10);
-                
-                // Desenhar score
-                ctx.font = '16px "Press Start 2P"';
-                ctx.fillText(`Score: ${score}`, 20, 30);
-                
-                requestAnimationFrame(gameLoop);
-            }
-            
-            gameLoop();
-        </script>
-
-        <!-- Seção de widgets (simulando a segunda imagem) -->
-        <div class="widget-section">
-            <h2>01</h2>
+    <!-- Popup de Projetos (estilo original mas com ícones) -->
+    <div id="projects-popup" class="popup hidden">
+        <div class="popup-content">
+            <button class="close-popup"><i class="fas fa-times"></i></button>
+            <h2><i class="fas fa-folder-open"></i> 01</h2>
             <div class="widget">
-                <h3>PROJETOS</h3>
-                <p>8 items  6.3 MB on disk</p>
+                <h3><i class="fas fa-folder"></i> PROJETOS</h3>
+                <p><i class="fas fa-info-circle"></i> 8 items  6.3 MB on disk</p>
                 <ul>
-                    <li>System Settings</li>
-                    <li>Program Files</li>
-                    <li>CONES</li>
-                    <li>SERIAM G5</li>
-                    <li>PRôtero ?</li>
-                    <li>ENTRAR</li>
-                    <li>ENFINITEURNELLE</li>
-                    <li>CHICATA UH</li>
-                    <li>Saves Games ?</li>
+                    <li><i class="fas fa-gamepad"></i> Power Connect- Educational Game</li>
+                    <li><i class="fas fa-chart-bar"></i> Data Analysis- Game Awards</li>
+                    <li><i class="fas fa-plus-circle"></i> More Projects</li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
